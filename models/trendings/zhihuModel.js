@@ -31,7 +31,4 @@ class ZhihuModel {
 }
 
 module.exports = new ZhihuModel()
-// const zhihu = new ZhihuModel()
-// zhihu.getTrending().then(res => {
-//   console.log(res)
-// })
+

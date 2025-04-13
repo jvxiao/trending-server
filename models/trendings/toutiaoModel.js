@@ -33,7 +33,4 @@ class ToutiaoModel {
 }
 
 module.exports = new ToutiaoModel()
-// const zhihu = new ToutiaoModel()
-// zhihu.getTrending().then(res => {
-//   console.log(res)
-// })
+
