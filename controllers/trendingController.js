@@ -24,6 +24,18 @@ class TrendingController {
       next(err)
     }
   }
+
+  async getDouyinTrending(req, res, next) {
+    try {
+      const trendings = await trendingService.getDouyin();
+      res.json({
+        status: 'success',
+        data: trendings
+      })
+    }catch(err) {
+      next(err)
+    }
+  }
 }
 
 module.exports = new TrendingController()

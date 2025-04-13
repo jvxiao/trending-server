@@ -5,4 +5,5 @@ const router = express.Router();
 
 router.get('/zhihu', trendingController.getZhihuTrending);
 router.get('/toutiao', trendingController.getToutiaoTrending);
+router.get('/douyin', trendingController.getDouyinTrending);
 module.exports = router;
