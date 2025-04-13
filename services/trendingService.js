@@ -1,12 +1,8 @@
 
-const WEIBO_TRENDING_URL = 'https://raw.githubusercontent.com/SnailDev/weibo-hot-hub/refs/heads/main/raw/hot-search-2025-04-11.json';
-
-
-
-
 const zhihuModel = require('../models/trendings/zhihuModel');
 const toutiaoModel = require('../models/trendings/toutiaoModel');
 const douyinModel = require('../models/trendings/douyinModel');
+const weiboModel = require('../models/trendings/weiboModel');
 
 class TrendingService {
   async getZhihu() {
@@ -22,7 +18,7 @@ class TrendingService {
   }
 
   async getWeibo() {
-
+    return await weiboModel.getTrending();
   }
 }
 

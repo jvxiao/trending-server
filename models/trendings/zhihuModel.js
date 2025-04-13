@@ -12,7 +12,6 @@ class ZhihuModel {
         }
       } catch(err) {
         reject(err)
-        // throw err
       }
     })
   }
