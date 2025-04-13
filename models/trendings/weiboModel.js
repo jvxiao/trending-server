@@ -18,8 +18,6 @@ class WeiboModel {
         })
         
         if(res.status === 200) {
-          console.log(res.data)
-          
           resolve(this.formatData(res.data))
         }
       } catch(err) {

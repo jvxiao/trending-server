@@ -21,7 +21,7 @@ npm run start
   - **知乎热搜榜数据**：  /api/trending/zhihu
   - **头条热搜榜数据**：  /api/trending/toutiao
   - **微博热搜榜数据**：  /api/trending/weibo
-  - **微博热搜榜数据**：   /api/trending/douyin
+  - **抖音热搜榜数据**：   /api/trending/douyin
 
   ```
   数据格式：
