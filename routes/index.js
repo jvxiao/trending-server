@@ -2,8 +2,11 @@ const express = require('express');
 const router = express.Router();
 
 // 导入子路由模块
+
 const exampleRoutes = require('./exampleRoutes');
 const trendingRoutes = require('./trendingRoutes')
+const utilsRoutes = require('./utilsRoutes');
+
 // 基础路由
 router.get('/', (req, res) => {
   res.send('Welcome to Express API');
@@ -12,7 +15,7 @@ router.get('/', (req, res) => {
 // 使用子路由（挂载到 /api 路径）
 router.use('/api', exampleRoutes);
 router.use('/api/trending', trendingRoutes)
-
+router.use('/api/utils', utilsRoutes)
 
 // 404 处理（放在所有路由之后）
 router.use((req, res) => {
