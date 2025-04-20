@@ -1,6 +1,11 @@
 const trendingService = require('../services/trendingService');
 
 class TrendingController {
+  constructor() {
+    this.cache = []
+    this.lastUpdate = Date.now()
+  }
+
   async getZhihuTrending(req, res, next) {
     try {
       const trendings = await trendingService.getZhihu();
