@@ -1,14 +1,24 @@
-const axios = require('axios')
+const axios = require('axios');
+const { BaseModel } = require('./baseModel');
 
-class ZhihuModel {
+class ZhihuModel extends BaseModel{
   ZHIHU_TRENDING_URL = 'https://www.zhihu.com/api/v3/feed/topstory/hot-lists/total';
-  
+  constructor() {
+    super()
+  }
+
   getTrending(param = { limit: 50 }) {
     return new Promise(async (resolve, reject) => {
+      console.log(this.isExpire(), this.lastUpdate)
+      if(!this.isExpire() && this.cache.length) {
+        resolve(this.cache);
+        return;
+      }
       try {
         const res = await axios.get(this.ZHIHU_TRENDING_URL, param)
         if(res.status === 200) {
-          resolve(this.formatData(res.data.data))
+          this.cache = this.formatData(res.data.data);
+          resolve(this.cache)
         }
       } catch(err) {
         reject(err)
